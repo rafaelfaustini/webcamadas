@@ -44,12 +44,13 @@ public class PessoaDAO implements PessoaInDAO {
 		
 		rs = ps.executeQuery();
 		
-		while(rs.next()) { // Percorre pela tabela
+		while(rs.next()) { // Percorre a tabela enquanto tiverem registros
+			// Caso tenham 5 pessoas cadastradas, esse while rodará 5 vezes (No caso nessa query)
 			Pessoa p = new Pessoa();
 			
 			// Configurando os atributos da pessoa a ser adicionada a lista
-			p.setId(rs.getInt(1));
-			p.setNome(rs.getString(2));
+			p.setId(rs.getInt(1)); 
+			p.setNome(rs.getString(2)); // rs.getString(2)-> vai retornar o nome da pessoa do banco de dados
 			p.setTelefone(rs.getString(3));
 			p.setEmail(rs.getString(4)); 
 			// Get baseado no tipo da coluna (getInt, getString) e o inteiro é o número da coluna na query
