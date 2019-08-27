@@ -17,13 +17,14 @@ public class PessoaDAO implements PessoaInDAO {
 	
 	@Override
 	public void Inserir(Pessoa _objeto) throws SQLException {
-		String SQL = "insert into pessoa (id, nome, email) values (?, ?, ?)";
+		String SQL = "insert into pessoa (nome, telefone, email) values (?, ?, ?)";
 		
 		PreparedStatement ps = this.conexao.prepareStatement(SQL);
 		
-		ps.setInt(1, _objeto.getId());
-		ps.setString(2, _objeto.getNome());
+		ps.setString(1, _objeto.getNome());
+		ps.setString(2, _objeto.getTelefone());
 		ps.setString(3, _objeto.getEmail());
+		
 		
 		ps.execute();
 
