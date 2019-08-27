@@ -2,7 +2,9 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import model.Pessoa;
@@ -32,8 +34,21 @@ public class PessoaDAO implements PessoaInDAO {
 
 	@Override
 	public List<Pessoa> listarTodos() throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+		
+		List<Pessoa> pessoas = new ArrayList<Pessoa>();
+		ResultSet rs = null;
+		
+		String SQL = "select id, nome, telefone, email from pessoa";
+				
+		PreparedStatement ps = this.conexao.prepareStatement(SQL);
+		
+		rs = ps.executeQuery();
+		
+		while(rs.next()) {
+			
+		}
+		
+		return pessoas;
 	}
 
 	@Override
