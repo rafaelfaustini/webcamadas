@@ -50,7 +50,8 @@ public class PessoaDAO implements PessoaInDAO {
 			p.setId(rs.getInt(1));
 			p.setNome(rs.getString(2));
 			p.setTelefone(rs.getString(3));
-			p.setEmail(rs.getString(4));
+			p.setEmail(rs.getString(4)); // O inteiro passado como parâmetro, se refere ao número da coluna na, 
+										// query nesse caso o telefone, por isso 4 e string
 			
 			pessoas.add(p);
 		}
