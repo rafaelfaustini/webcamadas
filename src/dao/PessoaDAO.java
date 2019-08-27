@@ -19,16 +19,16 @@ public class PessoaDAO implements PessoaInDAO {
 	
 	@Override
 	public void Inserir(Pessoa _objeto) throws SQLException {
-		String SQL = "insert into pessoa (nome, telefone, email) values (?, ?, ?)";
+		String SQL = "insert into pessoa (nome, telefone, email) values (?, ?, ?)"; // Os ? são parâmetros para o sql
 		
 		PreparedStatement ps = this.conexao.prepareStatement(SQL);
 		
-		ps.setString(1, _objeto.getNome());
-		ps.setString(2, _objeto.getTelefone());
-		ps.setString(3, _objeto.getEmail());
+		ps.setString(1, _objeto.getNome()); // Ele seta o parâmetro do primeiro ?
+		ps.setString(2, _objeto.getTelefone()); // Ele seta o parâmetro do segundo ?
+		ps.setString(3, _objeto.getEmail()); // Ele seta o parâmetro do terceiro ?
 		
 		
-		ps.execute();
+		ps.execute(); // Executa a query
 
 	}
 
@@ -44,8 +44,15 @@ public class PessoaDAO implements PessoaInDAO {
 		
 		rs = ps.executeQuery();
 		
-		while(rs.next()) {
+		while(rs.next()) { // Percorre pela tabela
+			Pessoa p = new Pessoa();
 			
+			p.setId(rs.getInt(1));
+			p.setNome(rs.getString(2));
+			p.setTelefone(rs.getString(3));
+			p.setEmail(rs.getString(4));
+			
+			pessoas.add(p);
 		}
 		
 		return pessoas;
