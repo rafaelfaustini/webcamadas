@@ -5,10 +5,12 @@ public class Pessoa implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
+	// Modelo de negócio de Pessoa
 	private int id;
 	private String nome;
 	private String email;
 	private String telefone;
+	
 	public int getId() {
 		return id;
 	}
