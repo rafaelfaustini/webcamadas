@@ -47,13 +47,14 @@ public class PessoaDAO implements PessoaInDAO {
 		while(rs.next()) { // Percorre pela tabela
 			Pessoa p = new Pessoa();
 			
+			// Configurando os atributos da pessoa a ser adicionada a lista
 			p.setId(rs.getInt(1));
 			p.setNome(rs.getString(2));
 			p.setTelefone(rs.getString(3));
-			p.setEmail(rs.getString(4)); // O inteiro passado como parâmetro, se refere ao número da coluna na, 
-										// query nesse caso o telefone, por isso 4 e string
+			p.setEmail(rs.getString(4)); 
+			// Get baseado no tipo da coluna (getInt, getString) e o inteiro é o número da coluna na query
 			
-			pessoas.add(p);
+			pessoas.add(p); // A pessoa é adicionada a lista de pessoas
 		}
 		
 		return pessoas;
