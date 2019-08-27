@@ -5,7 +5,7 @@ import java.util.List;
 
 import model.Pessoa;
 
-public interface PessoaInDAO {
+public interface PessoaInDAO { // Interface de PessoaDAO
 	void Inserir(Pessoa objeto) throws SQLException;
 	
 	List<Pessoa> listarTodos() throws SQLException;
