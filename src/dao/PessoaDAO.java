@@ -85,12 +85,14 @@ public class PessoaDAO implements PessoaInDAO {
 				
 		PreparedStatement ps = this.conexao.prepareStatement(SQL);
 		
-		rs = ps.executeQuery(SQL);
+
 		
 		ps.setString(1, _objeto.getNome());
 		ps.setString(2, _objeto.getEmail());
 		ps.setString(3, _objeto.getTelefone());
 		ps.setInt(4, _objeto.getId());
+		
+		rs = ps.executeQuery(SQL);
 		
 		return null;
 	}
@@ -103,9 +105,10 @@ public class PessoaDAO implements PessoaInDAO {
 				
 		PreparedStatement ps = this.conexao.prepareStatement(SQL);
 		
+		ps.setInt(1, _id);
 		rs = ps.executeQuery("update pessoa set nome=?, email=?, tel=? where id=?");
 		
-		ps.setInt(1, _id);
+
 		
 		while(rs.next()) {
 			Pessoa p = new Pessoa();
