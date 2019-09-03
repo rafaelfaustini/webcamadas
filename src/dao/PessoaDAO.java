@@ -78,13 +78,46 @@ public class PessoaDAO implements PessoaInDAO {
 
 	@Override
 	public Boolean Atualizar(Pessoa _objeto) throws SQLException {
-		// TODO Auto-generated method stub
+		
+		ResultSet rs = null;
+		
+		String SQL = "update pessoa set nome=?, email=?, tel=? where id=?";
+				
+		PreparedStatement ps = this.conexao.prepareStatement(SQL);
+		
+		rs = ps.executeQuery(SQL);
+		
+		ps.setString(1, _objeto.getNome());
+		ps.setString(2, _objeto.getEmail());
+		ps.setString(3, _objeto.getTelefone());
+		ps.setInt(4, _objeto.getId());
+		
 		return null;
 	}
 
 	@Override
 	public Pessoa buscarPorId(int _id) throws SQLException {
-		// TODO Auto-generated method stub
+		ResultSet rs = null;
+		
+		String SQL = "Select * from pessoa where id=?";
+				
+		PreparedStatement ps = this.conexao.prepareStatement(SQL);
+		
+		rs = ps.executeQuery("update pessoa set nome=?, email=?, tel=? where id=?");
+		
+		ps.setInt(1, _id);
+		
+		while(rs.next()) {
+			Pessoa p = new Pessoa();
+			
+			p.setId(rs.getInt(1)); 
+			p.setNome(rs.getString(2)); 
+			p.setTelefone(rs.getString(3));
+			p.setEmail(rs.getString(4)); 
+	
+			return p;
+		}
+		
 		return null;
 	}
 
