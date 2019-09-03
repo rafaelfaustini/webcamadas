@@ -19,7 +19,7 @@ public class PessoaDAO implements PessoaInDAO { // Vai lidar com a parte de banc
 	
 	@Override
 	public void Inserir(Pessoa _objeto) throws SQLException {
-		String SQL = "insert into pessoa (nome, telefone, email) values (?, ?, ?)"; // Os ? são parâmetros para o sql
+		String SQL = "insert into pessoa (nome, tel, email) values (?, ?, ?)"; // Os ? são parâmetros para o sql
 		
 		PreparedStatement ps = this.conexao.prepareStatement(SQL);
 		
@@ -38,7 +38,7 @@ public class PessoaDAO implements PessoaInDAO { // Vai lidar com a parte de banc
 		List<Pessoa> pessoas = new ArrayList<Pessoa>();
 		ResultSet rs = null;
 		
-		String SQL = "select id, nome, telefone, email from pessoa";
+		String SQL = "select id, nome, tel, email from pessoa";
 				
 		PreparedStatement ps = this.conexao.prepareStatement(SQL);
 		
