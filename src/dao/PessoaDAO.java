@@ -42,7 +42,7 @@ public class PessoaDAO implements PessoaInDAO {
 				
 		PreparedStatement ps = this.conexao.prepareStatement(SQL);
 		
-		rs = ps.executeQuery();
+		rs = ps.executeQuery(); // Retorna um ResultSet com os resultados diferentemente do execute() que retorna apenas booleano
 		
 		while(rs.next()) { // Percorre a tabela enquanto tiverem registros
 			// Caso tenham 5 pessoas cadastradas, esse while rodará 5 vezes (No caso nessa query)
@@ -72,8 +72,8 @@ public class PessoaDAO implements PessoaInDAO {
 		
 		ps.setInt(1, _id);
 		
-		rs = ps.execute();
-		return rs;
+		rs = ps.execute(); // Caso a query seja executada com sucesso retornará um valor booleano
+		return rs; 
 	}
 
 	@Override
@@ -92,7 +92,7 @@ public class PessoaDAO implements PessoaInDAO {
 		ps.setString(3, _objeto.getTelefone());
 		ps.setInt(4, _objeto.getId());
 		
-		rs = ps.execute();
+		rs = ps.execute(); // Caso a query seja executada com sucesso retornará um valor booleano
 		
 		return rs;
 	}
