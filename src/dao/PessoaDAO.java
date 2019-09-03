@@ -73,7 +73,7 @@ public class PessoaDAO implements PessoaInDAO {
 		ps.setInt(1, _id);
 		
 		rs = ps.execute();
-		return null;
+		return rs;
 	}
 
 	@Override
