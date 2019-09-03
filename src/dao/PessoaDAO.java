@@ -63,7 +63,16 @@ public class PessoaDAO implements PessoaInDAO {
 
 	@Override
 	public Boolean Excluir(int _id) throws SQLException {
-		// TODO Auto-generated method stub
+		ResultSet rs = null;
+		
+		String SQL = "delete from pessoa where id=?";
+
+				
+		PreparedStatement ps = this.conexao.prepareStatement(SQL);
+		
+		ps.setInt(1, _id);
+		
+		rs = ps.executeQuery();
 		return null;
 	}
 
