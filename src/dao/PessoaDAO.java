@@ -9,7 +9,7 @@ import java.util.List;
 
 import model.Pessoa;
 
-public class PessoaDAO implements PessoaInDAO {
+public class PessoaDAO implements PessoaInDAO { // Vai lidar com a parte de banco de dados referentes a pessoa
 	
 	private Connection conexao;
 	
@@ -111,7 +111,7 @@ public class PessoaDAO implements PessoaInDAO {
 		
 
 		
-		while(rs.next()) {
+		if(rs.next()) {
 			Pessoa p = new Pessoa();
 			
 			p.setId(rs.getInt(1)); 
