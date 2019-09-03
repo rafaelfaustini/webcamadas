@@ -101,12 +101,13 @@ public class PessoaDAO implements PessoaInDAO {
 	public Pessoa buscarPorId(int _id) throws SQLException {
 		ResultSet rs = null;
 		
-		String SQL = "Select * from pessoa where id=?";
+		String SQL = "Select * from pessoa where id=?"; // Com base no id passado por parâmetro ele vai encontrar a pessoa
 				
 		PreparedStatement ps = this.conexao.prepareStatement(SQL);
 		
-		ps.setInt(1, _id);
-		rs = ps.executeQuery("update pessoa set nome=?, email=?, tel=? where id=?");
+		ps.setInt(1, _id); // Faz a substituição do ? pelo id passado por parâmetro
+		// É utilizado o prepared statement ao invés da concatenação dos parâmetros por questão de segurança
+		rs = ps.executeQuery();
 		
 
 		
@@ -118,7 +119,7 @@ public class PessoaDAO implements PessoaInDAO {
 			p.setTelefone(rs.getString(3));
 			p.setEmail(rs.getString(4)); 
 	
-			return p;
+			return p; // Ao encotrar a pessoa
 		}
 		
 		return null;
