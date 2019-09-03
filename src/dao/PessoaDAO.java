@@ -63,7 +63,7 @@ public class PessoaDAO implements PessoaInDAO {
 
 	@Override
 	public Boolean Excluir(int _id) throws SQLException {
-		ResultSet rs = null;
+		boolean rs = false;
 		
 		String SQL = "delete from pessoa where id=?";
 
@@ -72,14 +72,14 @@ public class PessoaDAO implements PessoaInDAO {
 		
 		ps.setInt(1, _id);
 		
-		rs = ps.executeQuery();
+		rs = ps.execute();
 		return null;
 	}
 
 	@Override
 	public Boolean Atualizar(Pessoa _objeto) throws SQLException {
 		
-		ResultSet rs = null;
+		boolean rs = false;
 		
 		String SQL = "update pessoa set nome=?, email=?, tel=? where id=?";
 				
@@ -92,9 +92,9 @@ public class PessoaDAO implements PessoaInDAO {
 		ps.setString(3, _objeto.getTelefone());
 		ps.setInt(4, _objeto.getId());
 		
-		rs = ps.executeQuery(SQL);
+		rs = ps.execute();
 		
-		return null;
+		return rs;
 	}
 
 	@Override
