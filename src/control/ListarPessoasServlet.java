@@ -44,8 +44,8 @@ public class ListarPessoasServlet extends HttpServlet {
 			
 			List<Pessoa> listaPessoas = dao.listarTodos();
 			request.setAttribute("ListarPessoas", listaPessoas);
-			
-			RequestDispatcher despachante = request.getRequestDispatcher("/listarpessoas.jsp");
+			   
+			RequestDispatcher despachante = request.getRequestDispatcher("/listarp                                        essoas.jsp");
 			despachante.forward(request, response);
 		} catch(Exception e) {
 			e.printStackTrace();

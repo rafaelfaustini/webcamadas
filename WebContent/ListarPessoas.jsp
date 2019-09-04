@@ -28,28 +28,28 @@ List<Pessoa> pessoas = (List<Pessoa>)request.getAttribute("listaPessoas");
 for (Pessoa p : pessoas){
 %>
 <tr>
-<td>
-<%= p.getId() %>
-</td>
-<td>
-<%= p.getNome() %>
-</td>
-<td>
-<%= p.getEmail() %>
-</td>
-<td>
-<%= p.getTelefone() %>
-</td>
-<td>
-<a href="ExcluirPessoaServlet?id=<%=p.getId() %>">Excluir</a>
-</td>
-</tr>
-<%
-}
-%>
-
+	<td>
+	<%= p.getId() %>
+	</td>
+	<td>
+	<%= p.getNome() %>
+	</td>
+	<td>
+	<%= p.getEmail() %>
+	</td>
+	<td>
+	<%= p.getTelefone() %>
+	</td>
+	<td>
+	<a href="ExcluirPessoaServlet?id=<%=p.getId() %>">Excluir</a>
+	</td>
+		</tr>
+	<%
+	}
+	%>
 </table>
 </div>
+	<a href="index.jsp">Home Page</a>
 </div>
 
 </body>
