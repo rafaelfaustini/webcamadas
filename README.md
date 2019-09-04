@@ -6,5 +6,7 @@
 ### Requisitos
 - MYSQL Connector 5.1.47
 - Apache Tomcat v8.5
-
-### SQL
+ 
+## Importante
+### Banco de Dados
+- Está configurado um banco de dados com nome 'webcamadas'
