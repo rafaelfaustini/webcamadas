@@ -10,7 +10,7 @@
 ## Aviso Importante
 ### Banco de Dados
 - Está configurado um banco de dados com nome 'webcamadas'
-'''CREATE TABLE pessoa (
+```sql CREATE TABLE pessoa (
 id INT NOT NULL,
 nome VARCHAR(50) NOT NULL,
 email VARCHAR(100) NOT NULL,
@@ -18,4 +18,4 @@ tel VARCHAR(50) NOT NULL,
 PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
-ALTER TABLE pessoa ADD PRIMARY KEY (id);'''
+ALTER TABLE pessoa ADD PRIMARY KEY (id);```
