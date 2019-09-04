@@ -11,13 +11,24 @@
 </head>
 <body>
 
-<div align="center>"
+<div align="center">
 <table border="1">
 
 <tr>
 
 <th>Id</th>
+<th>Nome</th>
+<th>E-mail</th>
+<th>Telefone</th>
+<th>...</th>
 </tr>
+
+<%
+List<Pessoa> pessoas = (List<Pessoa>)request.getAttribute("listaPessoas");
+for (Pessoa p : pessoas){
+	
+}
+%>
 
 </table>
 </div>
