@@ -1,6 +1,7 @@
 package model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 public class Pessoa implements Serializable {
 	
@@ -14,6 +15,23 @@ public class Pessoa implements Serializable {
 	
 	private List<Endereco> enderecos;
 	
+	public Pessoa() {
+		this.enderecos = new ArrayList<Endereco>();
+	}
+	
+	
+	public Pessoa(int id, String nome, String email, String telefone, List<Endereco> enderecos) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.email = email;
+		this.telefone = telefone;
+		this.enderecos = enderecos;
+	}
+
+
+
+
 	public int getId() {
 		return id;
 	}
@@ -38,6 +56,19 @@ public class Pessoa implements Serializable {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
+	
+	
+	
+	public List<Endereco> getEnderecos() {
+		return enderecos;
+	}
+
+
+	public void setEnderecos(List<Endereco> enderecos) {
+		this.enderecos = enderecos;
+	}
+
+
 	@Override
 	public String toString() {
 		return "Pessoa [id=" + id + ", nome=" + nome + ", email=" + email + ", telefone=" + telefone + "]";
