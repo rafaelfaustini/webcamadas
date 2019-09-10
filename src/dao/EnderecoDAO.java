@@ -1,5 +1,6 @@
 package dao;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
@@ -23,8 +24,9 @@ public class EnderecoDAO implements EnderecoInDAO {
 		
 		ps.setString(1, _objeto.getLogradouro()); // Ele seta o parâmetro do primeiro ?
 		ps.setInt(2, _objeto.getNumero()); // Ele seta o parâmetro do segundo ?
-		ps.setString(3, _objeto.getBairro()); // Ele seta o parâmetro do terceiro ?
-		ps.setString(3, _objeto.getBairro());
+		ps.setString(3, _objeto.getCidade()); // Ele seta o parâmetro do terceiro ?
+		ps.setString(4, _objeto.getBairro());
+		ps.setString(4, _objeto.getEstado());
 		
 		ps.execute(); // Executa a query
 
