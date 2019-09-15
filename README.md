@@ -1,7 +1,7 @@
-### ConfiguraÁıes
+### Configura√ß√µes
 
 - Primeiramente importe o projeto, caso esteja usando o eclipse clique em file > import > General > Projects from File System or Archive
- - Em imported source coloque o caminho da pasta (workspace) em que a pasta do seu projeto est·
+ - Em imported source coloque o caminho da pasta (workspace) em que a pasta do seu projeto est√°
 
 ### Requisitos
 - MYSQL Connector 5.1.47
@@ -9,8 +9,9 @@
  
 ## Aviso Importante
 ### Banco de Dados
-- Est· configurado um banco de dados com nome 'webcamadas'
-```sql CREATE TABLE pessoa (
+- Est√° configurado um banco de dados com nome 'webcamadas'
+```sql 
+CREATE TABLE pessoa (
 id INT NOT NULL,
 nome VARCHAR(50) NOT NULL,
 email VARCHAR(100) NOT NULL,
