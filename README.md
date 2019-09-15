@@ -1,10 +1,12 @@
+### Video da Configuração com Eclipse Oxygen
+https://www.youtube.com/watch?v=5lha83ShQLo&feature=youtu.be
+
 ### Configurações
 
 - Primeiramente importe o projeto, caso esteja usando o eclipse clique em file > import > General > Projects from File System or Archive
  - Em imported source coloque o caminho da pasta (workspace) em que a pasta do seu projeto está
 
-#### Video Configuração com Eclipse ####
-https://www.youtube.com/watch?v=5lha83ShQLo&feature=youtu.be
+
 
 ### Requisitos
 - MYSQL Connector 5.1.47
