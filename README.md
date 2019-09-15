@@ -12,11 +12,8 @@
 - Está configurado um banco de dados com nome 'webcamadas'
 ```sql 
 CREATE TABLE pessoa (
-id INT NOT NULL,
+id INT NOT NULL auto_increment Primary Key,
 nome VARCHAR(50) NOT NULL,
 email VARCHAR(100) NOT NULL,
-tel VARCHAR(50) NOT NULL,
-PRIMARY KEY (id)
-) ENGINE=InnoDB;
-
-ALTER TABLE pessoa ADD PRIMARY KEY (id);```
+tel VARCHAR(50) NOT NULL
+);
