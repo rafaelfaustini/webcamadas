@@ -22,6 +22,7 @@ nome VARCHAR(50) NOT NULL,
 email VARCHAR(100) NOT NULL,
 tel VARCHAR(50) NOT NULL
 );
+
 CREATE TABLE endereco(
 id int NOT NULL auto_increment Primary Key,
 logradouro varchar(100),
