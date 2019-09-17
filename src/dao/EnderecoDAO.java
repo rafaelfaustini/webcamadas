@@ -62,7 +62,7 @@ public class EnderecoDAO implements EnderecoInDAO {
 	public List<Endereco> listarEnderecosPorPessoa(int _idPessoa) throws SQLException {
 		ResultSet rs = null;
 		List<Endereco> enderecos = new ArrayList<Endereco>();
-		String SQL = "SELECT id, logradouro, numero, bairro, cidade, estado from endereco where id_pessoa = ?";
+		String SQL = "SELECT id, logradouro, numero, bairro, cidade, estado from endereco where pessoa_id = ?";
 		
 		PreparedStatement ps = this.conexao.prepareStatement(SQL);
 		ps.setInt(1, _idPessoa); 
