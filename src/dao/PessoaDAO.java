@@ -58,7 +58,7 @@ public class PessoaDAO implements PessoaInDAO { // Vai lidar com a parte de banc
 			p.setNome(rs.getString(2)); // rs.getString(2)-> vai retornar o nome da pessoa do banco de dados
 			p.setTelefone(rs.getString(3));
 			p.setEmail(rs.getString(4)); 
-			// Get baseado no tipo da coluna (getInt, getString) e o inteiro é o número da coluna na query
+			// Get baseado no tipo da coluna (getInt, getString) e o inteiro é o número da coluna na query,
 			EnderecoDAO daoEnd = new EnderecoDAO(this.conexao);
 			List<Endereco> enderecos = daoEnd.listarEnderecosPorPessoa(id);
 			
@@ -122,11 +122,15 @@ public class PessoaDAO implements PessoaInDAO { // Vai lidar com a parte de banc
 		
 		if(rs.next()) {
 			Pessoa p = new Pessoa();
-			
-			p.setId(rs.getInt(1)); 
+			int id = rs.getInt(1);
+			p.setId(id); 
 			p.setNome(rs.getString(2)); 
 			p.setTelefone(rs.getString(3));
 			p.setEmail(rs.getString(4)); 
+			
+			EnderecoDAO daoEnd = new EnderecoDAO(this.conexao);
+			List<Endereco> enderecos = daoEnd.listarEnderecosPorPessoa(id);
+			
 	
 			return p; // Ao encotrar a pessoa
 		}
