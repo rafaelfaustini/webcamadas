@@ -1,4 +1,4 @@
-### Video da Configuração com Eclipse Oxygen
+﻿### Video da Configuração com Eclipse Oxygen
 https://www.youtube.com/watch?v=5lha83ShQLo&feature=youtu.be
 
 ### Configurações
@@ -22,3 +22,14 @@ nome VARCHAR(50) NOT NULL,
 email VARCHAR(100) NOT NULL,
 tel VARCHAR(50) NOT NULL
 );
+CREATE TABLE endereco(
+id int NOT NULL auto_increment Primary Key,
+logradouro varchar(100),
+numero int,
+bairro varchar(45),
+cidade varchar(45),
+estado varchar(45),
+pessoa_id int,
+Foreign Key (pessoa_id) references pessoa(id)
+);
+
