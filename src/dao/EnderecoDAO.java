@@ -2,7 +2,9 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import model.Endereco;
@@ -54,6 +56,33 @@ public class EnderecoDAO implements EnderecoInDAO {
 	public Endereco buscarPorId(int _id) throws SQLException {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public List<Endereco> listarEnderecosPorPessoa(int _idPessoa) throws SQLException {
+		ResultSet rs = null;
+		List<Endereco> enderecos = new ArrayList<Endereco>();
+		String SQL = "SELECT id, logradouro, numero, bairro, cidade, estado from endereco where id_pessoa = ?";
+		
+		PreparedStatement ps = this.conexao.prepareStatement(SQL);
+		ps.setInt(1, _idPessoa); 
+		
+		rs = ps.executeQuery();
+		
+		while (rs.next()) {
+			int id = rs.getInt(1);
+			String logradouro = rs.getString(2);
+			int numero = rs.getInt(3);
+			String bairro = rs.getString(4);
+			String cidade = rs.getString(5);
+			String estado = rs.getString(6);
+			
+			Endereco end = new Endereco(id, logradouro, numero, bairro, cidade, estado);
+			
+			enderecos.add(end);
+		}
+		
+		return enderecos;
 	}
 
 }

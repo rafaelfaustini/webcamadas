@@ -18,4 +18,6 @@ public interface EnderecoInDAO {
 
 	Endereco buscarPorId(int _id) throws SQLException;
 	
+	List<Endereco> listarEnderecosPorPessoa(int _idPessoa) throws SQLException;
+	
 }
