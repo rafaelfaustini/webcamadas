@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import model.Endereco;
 import model.Pessoa;
 
 public class PessoaDAO implements PessoaInDAO { // Vai lidar com a parte de banco de dados referentes a pessoa
@@ -49,12 +50,20 @@ public class PessoaDAO implements PessoaInDAO { // Vai lidar com a parte de banc
 			Pessoa p = new Pessoa();
 			
 			// Configurando os atributos da pessoa a ser adicionada a lista
+			int id = rs.getInt(1);
+			String nome = rs.getString(2);
+			String telefone = rs.getString(3);
+			String email = rs.getString(4);
 			p.setId(rs.getInt(1)); 
 			p.setNome(rs.getString(2)); // rs.getString(2)-> vai retornar o nome da pessoa do banco de dados
 			p.setTelefone(rs.getString(3));
 			p.setEmail(rs.getString(4)); 
 			// Get baseado no tipo da coluna (getInt, getString) e o inteiro é o número da coluna na query
+			EnderecoDAO daoEnd = new EnderecoDAO(this.conexao);
+			List<Endereco> enderecos = daoEnd.listarEnderecosPorPessoa(id);
 			
+
+			p.setEnderecos(enderecos);
 			pessoas.add(p); // A pessoa é adicionada a lista de pessoas
 		}
 		
